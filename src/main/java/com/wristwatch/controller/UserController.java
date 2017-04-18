@@ -31,10 +31,10 @@ public class UserController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    @ResponseBody
+//    @ResponseBody
     public String register(Model model, @ModelAttribute("user") User user)
     {
         userService.save(user);
-        return "Registration is successful for "+user.getFirstname()+" "+user.getLastname();
+        return "redirect:/";
     }
 }
