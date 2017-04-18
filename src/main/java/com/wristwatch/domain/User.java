@@ -1,13 +1,30 @@
 package com.wristwatch.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Created by web on 18/04/17.
  */
+@Entity
 public class User {
+
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    Long id;
 
     String firstname;
     String lastname;
     String password;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getFirstname() {
         return firstname;

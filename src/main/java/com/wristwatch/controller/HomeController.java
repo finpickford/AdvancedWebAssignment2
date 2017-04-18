@@ -19,9 +19,9 @@ public class HomeController {
 
         User user = new User();
 
-        user.setFirstname("Fin");
-        user.setLastname("Pickford");
-        user.setPassword("test");
+//        user.setFirstname("Fin");
+//        user.setLastname("Pickford");
+//        user.setPassword("test");
 
         model.addAttribute( "user", user);
         return "index";
