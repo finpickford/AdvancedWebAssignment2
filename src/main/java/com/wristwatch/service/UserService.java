@@ -1,5 +1,6 @@
 package com.wristwatch.service;
 
+import com.wristwatch.domain.LoginForm;
 import com.wristwatch.domain.User;
 import com.wristwatch.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,10 @@ public class UserService {
     public void delete(User user)
     {
         userRepository.delete(user);
+    }
+
+    public List<User> validatedLogin(LoginForm user)
+    {
+        return userRepository.findByFirstnameAndPassword(user.getAccountname(), user.getPassword());
     }
 }

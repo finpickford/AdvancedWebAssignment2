@@ -1,5 +1,6 @@
 package com.wristwatch.controller;
 
+import com.wristwatch.domain.LoginForm;
 import com.wristwatch.domain.User;
 import com.wristwatch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,9 +48,29 @@ public class UserController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginView(Model model)
     {
-        User user = new User();
+        LoginForm user = new LoginForm();
         model.addAttribute("user", user);
         return "login";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+//    @ResponseBody
+    public String register(Model model, @Valid @ModelAttribute("user") LoginForm user, BindingResult bindingResult)
+    {
+        if(bindingResult.hasErrors()){
+            model.addAttribute("user", user);
+            model.addAttribute("message", "Please provide information in each field.");
+            return "login";
+        }
+
+        if(userService.validatedLogin(user)==null || userService.validatedLogin(user).size()==0)
+        {
+            model.addAttribute("user", user);
+            model.addAttribute("message", "Your account name and password are incorrect.");
+            return "login";
+        }
+//        userService.save(user);
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/update/{user}", method = RequestMethod.GET)
