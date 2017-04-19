@@ -1,6 +1,7 @@
 package com.wristwatch.service;
 
 import com.wristwatch.domain.LoginForm;
+import com.wristwatch.domain.UserSearchForm;
 import com.wristwatch.domain.User;
 import com.wristwatch.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +32,16 @@ public class UserService {
         userRepository.delete(user);
     }
 
-    public List<User> validatedLogin(LoginForm user)
+    public boolean validatedLogin(LoginForm user)
     {
-        return userRepository.findByFirstnameAndPassword(user.getAccountname(), user.getPassword());
+
+        List<User> users = userRepository.checkUserInput(user.getAccountname(), user.getPassword());
+//        List<User> users = userRepository.findByFirstnameAndPassword(user.getAccountname(), user.getPassword());
+        return users !=null && users.size()>0;
+    }
+
+    public List<User> searchUsers(UserSearchForm user)
+    {
+        return userRepository.searchUsers(user.getFirstname(), user.getLastname());
     }
 }
