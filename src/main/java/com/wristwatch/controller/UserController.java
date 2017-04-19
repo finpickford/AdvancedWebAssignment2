@@ -5,7 +5,10 @@ import com.wristwatch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * Created by web on 18/04/17.
@@ -29,8 +32,13 @@ public class UserController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
 //    @ResponseBody
-    public String register(Model model, @ModelAttribute("user") User user)
+    public String register(Model model, @Valid @ModelAttribute("user") User user, BindingResult bindingResult)
     {
+        if(bindingResult.hasErrors()){
+            model.addAttribute("user", user);
+            model.addAttribute("message", "Please provide information in each field.");
+            return "register";
+        }
         userService.save(user);
         return "redirect:/";
     }
