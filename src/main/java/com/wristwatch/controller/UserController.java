@@ -35,6 +35,20 @@ public class UserController {
         return "redirect:/";
     }
 
+    @RequestMapping(value = "/update/{user}", method = RequestMethod.GET)
+    public String updateView(Model model, @PathVariable User user)
+    {
+        model.addAttribute("user", user);
+        return "update";
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String update(Model model, @ModelAttribute("user") User user)
+    {
+        userService.save(user);
+        return "redirect:/";
+    }
+
     @RequestMapping(value = "/delete/{user}", method = RequestMethod.GET)
     @ResponseBody
     public String delete(@PathVariable User user)
