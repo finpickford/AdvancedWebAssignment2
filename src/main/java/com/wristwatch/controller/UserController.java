@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import sun.misc.Request;
 
 import javax.validation.Valid;
 
@@ -41,6 +42,14 @@ public class UserController {
         }
         userService.save(user);
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginView(Model model)
+    {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "login";
     }
 
     @RequestMapping(value = "/update/{user}", method = RequestMethod.GET)
