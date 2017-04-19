@@ -5,10 +5,7 @@ import com.wristwatch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by web on 18/04/17.
@@ -36,5 +33,30 @@ public class UserController {
     {
         userService.save(user);
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/update/{user}", method = RequestMethod.GET)
+    public String updateView(Model model, @PathVariable User user)
+    {
+        model.addAttribute("user", user);
+        return "update";
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String update(Model model, @ModelAttribute("user") User user)
+    {
+        userService.save(user);
+        return "redirect:/";
+    }
+
+    @RequestMapping(value = "/delete/{user}", method = RequestMethod.GET)
+    @ResponseBody
+    public String delete(@PathVariable User user)
+    {
+        String name = user.getFirstname()+ " "+user.getLastname();
+
+        userService.delete(user);
+
+        return name;
     }
 }
