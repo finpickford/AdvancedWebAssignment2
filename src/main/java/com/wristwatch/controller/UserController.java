@@ -2,6 +2,7 @@ package com.wristwatch.controller;
 
 import com.wristwatch.domain.LoginForm;
 import com.wristwatch.domain.User;
+import com.wristwatch.domain.UserSearchForm;
 import com.wristwatch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -55,7 +56,7 @@ public class UserController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
 //    @ResponseBody
-    public String register(Model model, @Valid @ModelAttribute("user") LoginForm user, BindingResult bindingResult)
+    public String login(Model model, @Valid @ModelAttribute("user") LoginForm user, BindingResult bindingResult)
     {
         if(bindingResult.hasErrors()){
             model.addAttribute("user", user);
@@ -63,7 +64,7 @@ public class UserController {
             return "login";
         }
 
-        if(userService.validatedLogin(user)==null || userService.validatedLogin(user).size()==0)
+        if(userService.validatedLogin(user)==false)
         {
             model.addAttribute("user", user);
             model.addAttribute("message", "Your account name and password are incorrect.");
@@ -71,6 +72,14 @@ public class UserController {
         }
 //        userService.save(user);
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String searchView(Model model)
+    {
+        UserSearchForm searchForm = new UserSearchForm();
+        model.addAttribute("searchCriteria", searchForm);
+        return "search";
     }
 
     @RequestMapping(value = "/update/{user}", method = RequestMethod.GET)
