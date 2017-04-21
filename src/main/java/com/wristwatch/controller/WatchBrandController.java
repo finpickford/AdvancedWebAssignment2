@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * Created by web on 18/04/17.
@@ -21,14 +22,29 @@ public class WatchBrandController {
     @Autowired
     WatchBrandService watchBrandService;
 
-    @RequestMapping(value = "/watchbrand/addbrand", method = RequestMethod.GET)
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index(Model model, HttpSession session) {
+
+//        if(session.getAttribute("login")==null)
+//        {
+//            return "redirect:/user/login";
+//        }
+
+        List<WatchBrand> watchBrands = watchBrandService.findAll();
+
+
+        model.addAttribute( "watchBrands", watchBrands);
+        return "watchbrand/index";
+    }
+
+    @RequestMapping(value = "/addbrand", method = RequestMethod.GET)
     public String addBrandView(Model model)
     {
 
         WatchBrand watchBrand = new WatchBrand();
         model.addAttribute("watchBrand", watchBrand);
 
-        return "watchbrands/addWatchBrand";
+        return "watchbrand/addWatchBrand";
     }
 
     @RequestMapping(value = "/addbrand", method = RequestMethod.POST)
@@ -38,25 +54,18 @@ public class WatchBrandController {
         if(bindingResult.hasErrors()){
             model.addAttribute("watchBrand", watchBrand);
             model.addAttribute("message", "Please provide information in each field.");
-            return "watchbrands/addWatchBrand";
+            return "watchbrand/addWatchBrand";
         }
+
         watchBrandService.save(watchBrand);
         return "redirect:/";
     }
-
-//    @RequestMapping(value = "/search", method = RequestMethod.GET)
-//    public String searchView(Model model)
-//    {
-//        UserSearchForm searchForm = new UserSearchForm();
-//        model.addAttribute("searchCriteria", searchForm);
-//        return "user/search";
-//    }
 
     @RequestMapping(value = "/update/{watchBrand}", method = RequestMethod.GET)
     public String updateWatchBrandView(Model model, @PathVariable WatchBrand watchBrand)
     {
         model.addAttribute("watchBrand", watchBrand);
-        return "watchbrands/updateWatchBrand";
+        return "watchbrand/updateWatchBrand";
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
@@ -68,7 +77,7 @@ public class WatchBrandController {
 
     @RequestMapping(value = "/delete/{watchBrand}", method = RequestMethod.GET)
     @ResponseBody
-    public String delete(@PathVariable WatchBrand watchBrand)
+    public String deleteWatchBrand(@PathVariable WatchBrand watchBrand)
     {
         String name = watchBrand.getBrandname()+ " ";
 

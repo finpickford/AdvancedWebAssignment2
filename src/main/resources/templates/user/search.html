@@ -11,7 +11,7 @@
 
 <form th:action="@{/user/search}" th:object="${searchCriteria}" method="post">
     <p>Firstname: <input type="text" th:field="*{firstname}"/></p>
-    <p>Lastname: <input type="text" th:field="*{searchCriteria.lastname}"/></p>
+    <p>Lastname: <input type="text" th:field="*{lastname}"/></p>
 
     <p/>
     <input type="submit" value="Search"/>

@@ -1,6 +1,6 @@
 package com.wristwatch.service;
 
-import com.wristwatch.domain.LoginForm;
+//import com.wristwatch.domain.LoginForm;
 import com.wristwatch.domain.WatchBrand;
 import com.wristwatch.domain.WatchBrandRepository;
 import com.wristwatch.domain.WatchBrandSearchForm;
@@ -19,8 +19,8 @@ public class WatchBrandService {
     @Autowired
     WatchBrandRepository watchBrandRepository;
 
-    public WatchBrand save(WatchBrand u) {
-        return watchBrandRepository.save(u);
+    public WatchBrand save(WatchBrand watchBrand) {
+        return watchBrandRepository.save(watchBrand);
     }
 
     public List<WatchBrand> findAll() {
