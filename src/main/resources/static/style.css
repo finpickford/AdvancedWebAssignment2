@@ -1,0 +1,120 @@
+html, body {
+    background-color: #ecf0f1;
+    color: #636b6f;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+    li {
+        list-style: none;
+    }
+
+    p, li {
+        font-size: 16px;
+    }
+
+    a:hover {
+        color: #e67e22;
+    }
+
+    .content, .charts, .comments {
+        padding: 15px 0;
+        text-align: center;
+        clear: both;
+        background-color: white;
+        padding: 15px;
+        border: 1px solid #CCC;
+        width: 80%;
+        margin: 10px auto;
+        max-width: 1024px;
+        color: #2c3e50;
+        font-weight: bold;
+    }
+
+    .content {
+        text-align:center;
+    }
+
+    .title {
+        font-size: 84px;
+    }
+
+    .header {
+        text-align: center;
+        background-color: #2980b9;
+        color: #ffffff;
+        height: 62px;
+        padding: 5px 50px;
+    }
+
+    .header a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .header ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: #ffffff;
+        display: inline-block;
+        float: left;
+    }
+
+    .header li {
+        font-family: '0swald', sans-serif;
+        font-size: 1.2em;
+        line-height: 40px;
+        height: 40px;
+        color: #ffffff;
+        display: inline-block;
+    }
+
+    .heading {
+        padding: 5px 0;
+        text-align: center;
+        background-color: #3498db;
+        color: #ffffff;
+    }
+
+    .heading h1 {
+        font-size: 25px;
+    }
+
+    .nav ul {
+        list-style: none;
+        background-color: #2980b9;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav li {
+        font-family: '0swald', sans-serif;
+        font-size: 1.2em;
+        line-height: 40px;
+        height: 40px;
+        border-bottom: 1px solid #888;
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        transition: .3s background-color;
+        font-weight: normal;
+    }
+
+    .nav a:hover {
+        background-color: #1565C0;
+    }
+
+    .nav a:active {
+        background-color: #fff;
+        color: #444;
+        cursor: default;
+    }
+

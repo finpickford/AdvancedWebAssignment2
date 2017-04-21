@@ -13,6 +13,8 @@ import sun.misc.Request;
 
 import javax.validation.Valid;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * Created by web on 18/04/17.
  */
@@ -30,7 +32,7 @@ public class UserController {
         User user = new User();
         model.addAttribute("user", user);
 
-        return "register";
+        return "user/register";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -40,7 +42,7 @@ public class UserController {
         if(bindingResult.hasErrors()){
             model.addAttribute("user", user);
             model.addAttribute("message", "Please provide information in each field.");
-            return "register";
+            return "user/register";
         }
         userService.save(user);
         return "redirect:/";
@@ -51,27 +53,41 @@ public class UserController {
     {
         LoginForm user = new LoginForm();
         model.addAttribute("user", user);
-        return "login";
+        return "user/login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
 //    @ResponseBody
-    public String login(Model model, @Valid @ModelAttribute("user") LoginForm user, BindingResult bindingResult)
+    public String login(Model model, @Valid @ModelAttribute("user") LoginForm user, BindingResult bindingResult, HttpSession session)
     {
         if(bindingResult.hasErrors()){
             model.addAttribute("user", user);
             model.addAttribute("message", "Please provide information in each field.");
-            return "login";
+            return "/user/login";
         }
 
         if(userService.validatedLogin(user)==false)
         {
             model.addAttribute("user", user);
             model.addAttribute("message", "Your account name and password are incorrect.");
-            return "login";
+            return "user/login";
         }
 //        userService.save(user);
+        session.setAttribute("login", true);
+
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(Model model, HttpSession session)
+    {
+//        if(session.getAttribute("login")==null)
+//        {
+//            return "logout_error";
+//        }
+
+        session.removeAttribute("login");
+        return "redirect:/user/login";
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
@@ -79,14 +95,14 @@ public class UserController {
     {
         UserSearchForm searchForm = new UserSearchForm();
         model.addAttribute("searchCriteria", searchForm);
-        return "search";
+        return "user/search";
     }
 
     @RequestMapping(value = "/update/{user}", method = RequestMethod.GET)
     public String updateView(Model model, @PathVariable User user)
     {
         model.addAttribute("user", user);
-        return "update";
+        return "user/update";
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)

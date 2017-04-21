@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="headerinc">
+<title>WristWatch</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+</div>
+
+
+<div th:fragment="header">
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <div class="header">
+        <div class="logo">
+            <ul>
+                <li><a th:href="@{/}">WristWatch</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="nav">
+    <a th:href="@{/}">Home</a>
+    <ul>
+        <li><a th:href="@{/brands/index}">Brands</a></li>
+        <li><a th:href="@{/user/search}">Search</a></li>
+        <li><a th:href="@{/user/dashboard}">Dashboard</a></li>
+        <li><a th:href="@{/logout}">Logout</a></li>
+
+        <!--<form th:action="@{/user/search}" th:object="${searchCriteria}" method="post">-->
+            <!--<p>Firstname: <input type="text" th:field="*{firstname}"/></p>-->
+            <!--<p>Lastname: <input type="text" th:field="*{searchCriteria.lastname}"/></p>-->
+
+            <!--<p/>-->
+            <!--<input type="submit" value="Search"/>-->
+        <!--</form>-->
+    </ul>
+    </div>
+</div>
+
+</html>
