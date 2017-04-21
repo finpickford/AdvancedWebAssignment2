@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--<meta charset="UTF-8">-->
+    <title>Update Watch Brand</title>
+</head>
+<body>
+<div th:include="fragments/header :: header"></div>
+
+<h3>Watch Brand Update</h3>
+
+<form action ="#" th:action="@{/watchbrand/update}" th:object="${watchBrand}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <p>First Name: </p> <input type="text" th:field="*{brandname}"/>
+
+    <input type="submit" value="Update" />
+</form>
+</body>
+</html>
