@@ -56,7 +56,6 @@ public class WatchBrandController {
             model.addAttribute("message", "Please provide information in each field.");
             return "watchbrand/addWatchBrand";
         }
-
         watchBrandService.save(watchBrand);
         return "redirect:/";
     }

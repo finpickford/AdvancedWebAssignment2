@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!--<meta charset="UTF-8">-->
-    <title>Update User</title>
+    <th:block th:include="fragments/header :: headerinc"></th:block>
 </head>
 <body>
+
 <div th:include="fragments/header :: header"></div>
 
+<div class="content">
 <h3>User Update</h3>
 
+<div class="form">
 <form action ="#" th:action="@{/user/update}" th:object="${user}" method="post">
     <input type="hidden" th:field="*{id}"/>
     <p>First Name: </p> <input type="text" th:field="*{firstname}"/>
     <p>Last Name: </p> <input type="text" th:field="*{lastname}"/>
     <p>Password: </p> <input type="text" th:field="*{password}"/>
 
-    <input type="submit" value="Update" />
+    <button type="submit">Update</button>
 </form>
+</div>
+</div>
+
 </body>
 </html>

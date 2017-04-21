@@ -2,24 +2,24 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <th:block th:include="fragments/header :: headerinc"></th:block>
-    <link rel="stylesheet" type="text/css" href="../static/style.css" />
 </head>
 <body>
 
 <div th:include="fragments/header :: header"></div>
 
-<table>
-    <tr>
-        <th>Brand Name</th>
-        <th>Update</th>
-        <th>Delete</th>
-    </tr>
-    <tr th:each="watchBrand : ${watchBrands}">
-        <td th:text="${watchBrand.brandname}">Fin</td>
-        <td><a href="#" th:href="@{/watchbrand/update/}+${watchBrand.id}">Update</a></td>
-        <td><a href="#" th:href="@{/watchbrand/delete/}+${watchBrand.id}">Delete</a></td>
-    </tr>
-</table>
+<div class="content">
+<!--<table>-->
+    <!--<tr>-->
+        <!--<th>Brand Name</th>-->
+        <!--<th>Update</th>-->
+        <!--<th>Delete</th>-->
+    <!--</tr>-->
+    <!--<tr th:each="watchBrand : ${watchBrands}">-->
+        <!--<td th:text="${watchBrand.brandname}">Fin</td>-->
+        <!--<td><a href="#" th:href="@{/watchbrand/update/}+${watchBrand.id}">Update</a></td>-->
+        <!--<td><a href="#" th:href="@{/watchbrand/delete/}+${watchBrand.id}">Delete</a></td>-->
+    <!--</tr>-->
+<!--</table>-->
 
 
 <div>
@@ -30,6 +30,7 @@
         <a href="#" th:href="@{/watchbrand/delete/}+${watchBrand.id}">Delete</a>
     </li>
 </ol>
+</div>
 </div>
 
 

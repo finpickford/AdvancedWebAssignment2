@@ -3,12 +3,11 @@
 
 <div th:fragment="headerinc">
 <title>WristWatch</title>
-    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <link href="../../../css/style.css" rel="stylesheet" type="text/css" />
 </div>
 
 
 <div th:fragment="header">
-    <link rel="stylesheet" type="text/css" href="../static/style.css" />
     <div class="header">
         <div class="logo">
             <ul>
@@ -17,20 +16,11 @@
         </div>
     </div>
     <div class="nav">
-    <a th:href="@{/}">Home</a>
     <ul>
         <li><a th:href="@{/watchbrand/index}">Brands</a></li>
         <li><a th:href="@{/user/search}">Search</a></li>
         <li><a th:href="@{/user/dashboard}">Dashboard</a></li>
-        <li><a th:href="@{/logout}">Logout</a></li>
-
-        <!--<form th:action="@{/user/search}" th:object="${searchCriteria}" method="post">-->
-            <!--<p>Firstname: <input type="text" th:field="*{firstname}"/></p>-->
-            <!--<p>Lastname: <input type="text" th:field="*{searchCriteria.lastname}"/></p>-->
-
-            <!--<p/>-->
-            <!--<input type="submit" value="Search"/>-->
-        <!--</form>-->
+        <li><a th:href="@{/user/logout}">Logout</a></li>
     </ul>
     </div>
 </div>
