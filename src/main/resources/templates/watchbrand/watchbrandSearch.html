@@ -11,14 +11,19 @@
     <h3>Searh Watchbrand</h3>
 
     <div class="form">
-        <div class="search">
             <form th:action="@{/watchbrand/search}" th:object="${searchCriteria}" method="post">
-                <p>Firstname: <input type="text" th:field="*{brandname}"/></p>
+                <p>Brand name: <input type="text" th:field="*{brandname}"/></p>
 
-                <p/>
                 <button type="submit">Search</button>
             </form>
-        </div>
+    </div>
+
+    <div>
+        <ol>
+            <li th:each="watchbrand : ${watchbrand}">
+                <span th:text="${watchbrand.brandname}">Rolex</span>
+            </li>
+        </ol>
     </div>
 </div>
 

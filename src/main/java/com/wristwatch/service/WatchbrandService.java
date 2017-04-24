@@ -26,6 +26,11 @@ public class WatchbrandService {
 
     public List<Watchbrand> searchWatchbrand(WatchbrandSearchForm watchbrand)
     {
+        if(watchbrand.getBrandname().isEmpty())
+        {
+            return watchbrandRepository.findAll();
+        }
+
         return watchbrandRepository.searchWatchbrand(watchbrand.getBrandname());
     }
 }

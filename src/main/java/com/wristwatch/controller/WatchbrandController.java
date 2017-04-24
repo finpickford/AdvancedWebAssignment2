@@ -1,6 +1,7 @@
 package com.wristwatch.controller;
 
 import com.wristwatch.domain.Watchbrand;
+import com.wristwatch.domain.WatchbrandSearchForm;
 import com.wristwatch.service.WatchbrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -54,5 +55,21 @@ public class WatchbrandController {
         watchbrandService.delete(watchbrand);
 
         return name;
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String searchBrandView(Model model)
+    {
+        WatchbrandSearchForm searchForm = new WatchbrandSearchForm();
+        model.addAttribute("searchCriteria", searchForm);
+        return "watchbrand/watchbrandSearch";
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
+    public String search(Model model, @ModelAttribute("searchCriteria") WatchbrandSearchForm searchForm)
+    {
+        List<Watchbrand> watchbrand = watchbrandService.searchWatchbrand(searchForm);
+        model.addAttribute("watchbrand", watchbrand);
+        return "watchbrand/watchbrandSearch";
     }
 }
