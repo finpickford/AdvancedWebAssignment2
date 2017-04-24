@@ -9,9 +9,9 @@
 <div class="content">
     <div>
         <ol>
-            <li th:each="watchbrand : ${watchbrands}">
+            <li th:each="watchbrand : ${watchbrand}">
                 <span th:text="${watchbrand.brandname}">Rolex</span>
-                <a href="#" th:href="@{watchbrand/delete/}+${watchbrand.id}">Delete</a>
+                <a href="#" th:href="@{/watchbrand/deletebrand/}+${watchbrand.id}">Delete</a>
             </li>
         </ol>
     </div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="fragments/header :: headerinc"></th:block>
+</head>
+<body>
+
+<div th:include="fragments/header :: header"></div>
+
+<div class="content">
+    <h3>Searh Watchbrand</h3>
+
+    <div class="form">
+        <div class="search">
+            <form th:action="@{/watchbrand/search}" th:object="${searchCriteria}" method="post">
+                <p>Firstname: <input type="text" th:field="*{brandname}"/></p>
+
+                <p/>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

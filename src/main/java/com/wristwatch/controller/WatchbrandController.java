@@ -5,10 +5,7 @@ import com.wristwatch.service.WatchbrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,9 +24,9 @@ public class WatchbrandController {
     public String all(Model model)
     {
 
-        List<Watchbrand> watchbrands = watchbrandService.findAll();
+        List<Watchbrand> watchbrand = watchbrandService.findAll();
 
-        model.addAttribute("watchbrand", watchbrands);
+        model.addAttribute("watchbrand", watchbrand);
         return "watchbrand/index";
     }
 
@@ -43,11 +40,19 @@ public class WatchbrandController {
     }
 
     @RequestMapping(value = "/addbrand", method = RequestMethod.POST)
-    @ResponseBody
     public String addBrand(Model model, @ModelAttribute("watchbrand") Watchbrand watchbrand)
     {
         watchbrandService.save(watchbrand);
-        return "Succesfull for: "+watchbrand.getBrandname();
-//        return "watchbrand/index";
+        return "watchbrand/index";
+    }
+
+    @RequestMapping(value = "/deletebrand/{watchbrand}", method = RequestMethod.GET)
+    @ResponseBody
+    public String deleteBrand(@PathVariable Watchbrand watchbrand)
+    {
+        String name = watchbrand.getBrandname();
+        watchbrandService.delete(watchbrand);
+
+        return name;
     }
 }

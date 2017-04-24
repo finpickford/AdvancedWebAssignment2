@@ -2,6 +2,7 @@ package com.wristwatch.service;
 
 import com.wristwatch.domain.Watchbrand;
 import com.wristwatch.domain.WatchbrandRepository;
+import com.wristwatch.domain.WatchbrandSearchForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +20,12 @@ public class WatchbrandService {
 
     public Watchbrand save(Watchbrand w) { return watchbrandRepository.save(w); }
 
+    public void delete(Watchbrand watchbrand) { watchbrandRepository.delete(watchbrand); }
+
     public List<Watchbrand> findAll() { return watchbrandRepository.findAll(); }
+
+    public List<Watchbrand> searchWatchbrand(WatchbrandSearchForm watchbrand)
+    {
+        return watchbrandRepository.searchWatchbrand(watchbrand.getBrandname());
+    }
 }
