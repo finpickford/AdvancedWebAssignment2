@@ -1,22 +1,19 @@
 package com.wristwatch.domain;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Created by web on 18/04/17.
+ * Created by web on 24/04/17.
  */
 @Entity
-public class WatchBrand {
+public class Watchbrand {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    @NotEmpty
     String brandname;
 
     public Long getId() {
@@ -34,6 +31,5 @@ public class WatchBrand {
     public void setBrandname(String brandname) {
         this.brandname = brandname;
     }
-
 
 }
