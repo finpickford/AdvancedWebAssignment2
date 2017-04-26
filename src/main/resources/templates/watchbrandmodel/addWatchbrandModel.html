@@ -11,7 +11,7 @@
 </div>
 <div class="content">
     <div class="form">
-        <form action="#" th:action="@{/templates.watchbrandmodel/addmodel}" th:object="${watchbrandmodel}" method="post">
+        <form action="#" th:action="@{/watchbrandmodel/addmodel}" th:object="${watchbrandmodel}" method="post">
             <input type="hidden" th:field="*{id}"/>
             <p>Model Name: </p> <input type="text" th:field="*{modelname}"/>
             <p>Model No: </p> <input type="text" th:field="*{modelno}"/>

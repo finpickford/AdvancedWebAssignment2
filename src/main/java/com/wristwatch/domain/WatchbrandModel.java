@@ -1,8 +1,11 @@
 package com.wristwatch.domain;
 
+import org.hibernate.annotations.*;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 
 /**
  * Created by web on 26/04/17.
@@ -13,7 +16,9 @@ public class WatchbrandModel {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    Long brand_id;
+    @ManyToOne
+    @JoinColumn (name = "watchbrand_id")
+    private Watchbrand watchbrand;
 
     @NotEmpty
     String modelname;
@@ -30,14 +35,6 @@ public class WatchbrandModel {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getBrand_id() {
-        return brand_id;
-    }
-
-    public void setBrand_id(Long brand_id) {
-        this.brand_id = brand_id;
     }
 
     public String getModelname() {
