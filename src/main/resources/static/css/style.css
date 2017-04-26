@@ -46,7 +46,7 @@ a:hover {
 
 /* Style for the button id hover state. */
 #button:hover {
-    background: #3498db;
+    background: #f39c12;
     text-decoration: none;
 }
 
@@ -64,7 +64,7 @@ a:hover {
 /* Form buttons. */
 .form button {
     width: 100%;
-    background-color: #2980b9;
+    background-color: #e67e22;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -75,7 +75,7 @@ a:hover {
 
 /* Form buttons hover state. */
 .form button:hover {
-    background-color: #3498db;
+    background-color: #f39c12;
 }
 
 /* Form div to hold every form. */
@@ -241,7 +241,7 @@ ul, li, a {
 /* Style for the page header. */
 .header {
     text-align: center;
-    background-color: #2980b9;
+    background-color: #e67e22;
     color: #ffffff;
     height: 62px;
     padding: 5px 50px;
@@ -283,7 +283,7 @@ ul, li, a {
 .heading {
     padding: 5px 0;
     text-align: center;
-    background-color: #3498db;
+    background-color: #f39c12;
     color: #ffffff
 }
 
@@ -302,7 +302,7 @@ ul, li, a {
 /* Style the navbar dark blue and the text centered. */
 .nav ul {
     list-style: none;
-    background-color: #2980b9;
+    background-color: #e67e22;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -325,7 +325,7 @@ ul, li, a {
 }
 
 .nav a:hover {
-    background-color: #1565C0;
+    background-color: #f39c12;
 }
 
 .nav a.active {
@@ -353,7 +353,7 @@ ul, li, a {
 
     /* Login bar at the top of the header. */
     .login {
-        background-color: #2980b9;
+        background-color: #c0392b;
         padding: 10px 10px;
         font-size: 10px;
         height: 10px;

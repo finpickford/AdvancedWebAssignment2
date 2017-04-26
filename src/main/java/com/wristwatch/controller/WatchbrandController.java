@@ -47,6 +47,20 @@ public class WatchbrandController {
         return "watchbrand/index";
     }
 
+    @RequestMapping(value = "/updatebrand/{watchbrand}", method = RequestMethod.GET)
+    public String updateView(Model model, @PathVariable Watchbrand watchbrand)
+    {
+        model.addAttribute("watchbrand", watchbrand);
+        return "watchbrand/updateWatchBrand";
+    }
+
+    @RequestMapping(value = "/updatebrand", method = RequestMethod.POST)
+    public String update(Model model, @ModelAttribute("watchbrand") Watchbrand watchbrand)
+    {
+        watchbrandService.save(watchbrand);
+        return "redirect:/";
+    }
+
     @RequestMapping(value = "/deletebrand/{watchbrand}", method = RequestMethod.GET)
     @ResponseBody
     public String deleteBrand(@PathVariable Watchbrand watchbrand)
@@ -71,5 +85,12 @@ public class WatchbrandController {
         List<Watchbrand> watchbrand = watchbrandService.searchWatchbrand(searchForm);
         model.addAttribute("watchbrand", watchbrand);
         return "watchbrand/watchbrandSearch";
+    }
+
+    @RequestMapping(value = "/viewbrand/{watchbrand}", method = RequestMethod.GET)
+    public String viewBrand(Model model, @PathVariable Watchbrand watchbrand)
+    {
+        model.addAttribute("watchbrand", watchbrand);
+        return "watchbrand/viewWatchBrand";
     }
 }

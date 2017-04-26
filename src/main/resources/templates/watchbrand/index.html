@@ -6,23 +6,27 @@
 <body>
 
 <div th:include="fragments/header :: header"></div>
+<div class="heading">
+    <h3>All brands</h3>
+</div>
 <div class="content">
     <div>
         <ol>
             <li th:each="watchbrand : ${watchbrand}">
-                <span th:text="${watchbrand.brandname}">Rolex</span>
+                <a href="#" th:href="@{/watchbrand/viewbrand/}+${watchbrand.id}" th:text="${watchbrand.brandname}"></a>
+                <a href="#" th:href="@{/watchbrand/updatebrand/}+${watchbrand.id}">Update</a>
                 <a href="#" th:href="@{/watchbrand/deletebrand/}+${watchbrand.id}">Delete</a>
             </li>
         </ol>
     </div>
+    <div class="form">
+        <form action="#" th:action="@{/watchbrand/addbrand}" th:object="${watchbrand}" method="get">
+
+            <button type="submit">Add Brand</button>
+        </form>
+    </div>
 </div>
 
-<div class="form">
-    <form action="#" th:action="@{/watchbrand/addbrand}" th:object="${watchbrand}" method="get">
-
-        <button type="submit">Add Brand</button>
-    </form>
-</div>
 
 </body>
 </html>
