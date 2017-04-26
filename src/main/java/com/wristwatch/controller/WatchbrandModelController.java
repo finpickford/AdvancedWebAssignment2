@@ -26,6 +26,7 @@ public class WatchbrandModelController {
     {
         WatchbrandModel watchbrandModel = new WatchbrandModel();
         model.addAttribute("watchbrandmodel", watchbrandModel);
+//        model.addAttribute("watchbrand", watchbrand);
 
         return "watchbrandmodel/addWatchbrandModel";
     }
