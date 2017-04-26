@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="fragments/header :: headerinc"></th:block>
+</head>
+<body>
+
+<div th:include="fragments/header :: header"></div>
+<div class="heading">
+    <h3>All brands</h3>
+</div>
+<div class="content">
+    <div>
+        <ol>
+            <li th:each="watchbrand : ${watchbrand}">
+                <a href="#" th:href="@{/watchbrand/viewbrand/}+${watchbrand.id}" th:text="${watchbrand.brandname}"></a>
+                <a href="#" th:href="@{/watchbrand/updatebrand/}+${watchbrand.id}">Update</a>
+                <a href="#" th:href="@{/watchbrand/deletebrand/}+${watchbrand.id}">Delete</a>
+            </li>
+        </ol>
+    </div>
+    <div class="form">
+        <form action="#" th:action="@{/watchbrand/addbrand}" th:object="${watchbrand}" method="get">
+
+            <button type="submit">Add Brand</button>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

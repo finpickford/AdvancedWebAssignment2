@@ -1,0 +1,467 @@
+/* CSS for the html and body tags. */
+html, body {
+    background-color: #ecf0f1;
+    color: #636b6f;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    /*height: 100vh;*/
+    margin: 0;
+    padding: 0;
+    overflow-x:hidden;
+}
+
+/* Make bullet points have no bullet symbol. */
+li {
+    list-style: none;
+}
+
+p, li {
+    font-size: 16px;
+}
+
+/* Make links orange on hover. */
+a:hover {
+    color: #e67e22;
+}
+
+/* Style the comment so they display in a block. */
+.formComment {
+    display:block;
+}
+
+.formComments li {
+    display: inline-block;
+    padding: 10px;
+}
+
+/* Style for all id's named button. */
+#button {
+    border-radius: 28px;
+    color: #ffffff;
+    font-size: 16px;
+    background: #34495e;
+    padding: 5px 20px;
+    text-decoration: none;
+}
+
+/* Style for the button id hover state. */
+#button:hover {
+    background: #3498db;
+    text-decoration: none;
+}
+
+/* Form text areas. */
+.form textarea, select, #email, #password, #password-confirm, #name {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Form buttons. */
+.form button {
+    width: 100%;
+    background-color: #2980b9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Form buttons hover state. */
+.form button:hover {
+    background-color: #3498db;
+}
+
+/* Form div to hold every form. */
+.form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/* Unordered list for the tab sections on the model show view. */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/* Make the paragraphs in the info section bold. */
+.info p{
+    font-weight: bold;
+}
+
+/* Position the alert flash message. */
+.alert {
+    background: #e3e3e3;
+    padding: 7px;
+    color: #ffffff;
+    padding: 7px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Change the background to green if a succesful message. */
+.alertSuccess {
+    background: #2ecc71;
+}
+
+/* Change the background to red if an error message. */
+.alertError {
+    background: #e74c3c;
+}
+
+/* Drop down for when a user is logged in so they can logout. */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Drop down for when a user is logged in so they can logout. */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Drop down links for when a user is logged in so they can logout. */
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Drop down for links on hover when a user is logged in so they can logout. */
+.dropdown-menu a:hover {background-color: #f1f1f1}
+
+/* Drop down for when a user is logged in so they can logout. */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Drop down for when a user is logged in so they can logout. */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+/* Style for lists and links. */
+ul, li, a {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Style for the functions sections for admin on the model pages. */
+.functions {
+    padding: 15px 0;
+    text-align: center;
+    clear: both;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #CCC;
+    width: 80%;
+    margin: 10px auto;
+    max-width: 1024px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Style for the content of the page, the charts on the dashboard and then comments section. */
+.content, .charts, .comments {
+    padding: 15px 0;
+    text-align: center;
+    clear: both;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #CCC;
+    width: 80%;
+    margin: 10px auto;
+    max-width: 1024px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+
+/* Style for the search form in the header of the page. */
+.search #search {
+    border-radius: 60px;
+    width: 245px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+/* Style for the page header. */
+.header {
+    text-align: center;
+    background-color: #2980b9;
+    color: #ffffff;
+    height: 62px;
+    padding: 5px 50px;
+}
+
+/* Make the header links, make them white. */
+.header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Make header ul float to the left. */
+.header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+    display: inline-block;
+    float: left;
+}
+
+/* Make the header lists white with a height of 40. */
+.header li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    line-height: 40px;
+    height: 40px;
+    color: #ffffff;
+    display: inline-block;
+}
+
+/* Make the search bar in the header float right. */
+.header .search {
+    float: right;
+    padding: 31px 0px 0px;
+}
+
+/* Make the page heading bright blue and centered. */
+.heading {
+    padding: 5px 0;
+    text-align: center;
+    background-color: #3498db;
+    color: #ffffff
+}
+
+/* Make the title in the heading 25 pixels. */
+.heading h1 {
+    font-size: 25px;
+}
+
+
+.holder {
+    width: 95%;
+    margin: 0 auto;
+    text-align:center;
+}
+
+/* Style the navbar dark blue and the text centered. */
+.nav ul {
+    list-style: none;
+    background-color: #2980b9;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px solid #888;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s background-color;
+    font-weight: normal;
+}
+
+.nav a:hover {
+    background-color: #1565C0;
+}
+
+.nav a.active {
+    background-color: #fff;
+    color: #444;
+    cursor: default;
+}
+
+
+/* Make the nav bar responsive if the width of the page is 600 pixels. */
+@media screen and (min-width: 600px) {
+    .nav li {
+        width: 120px;
+        border-bottom: none;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.4em;
+    }
+
+    /* Display Inline */
+    .nav li {
+        display: inline-block;
+        margin-right: -4px;
+    }
+
+    /* Login bar at the top of the header. */
+    .login {
+        background-color: #2980b9;
+        padding: 10px 10px;
+        font-size: 10px;
+        height: 10px;
+    }
+
+    /* Login lists. */
+    .login ul {
+        list-style: none;
+        background-color: #2980b9;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .login li {
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.2em;
+        line-height: 10px;
+        height: 10px;
+        border-bottom: 1px solid #888;
+    }
+
+    /* Login links, white with no decoration. */
+    .login a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        transition: .3s background-color;
+        font-weight: normal;
+    }
+
+    /* Make the hover state dark blue. */
+    .login a:hover {
+        background-color: #1565C0;
+    }
+
+    /* Active login link. */
+    .login a.active {
+        background-color: #fff;
+        color: #444;
+        cursor: default;
+    }
+
+    .login .loginLinks {
+        float: left;
+    }
+
+    /* Make the login bar responsive. */
+    @media screen and (min-width: 600px) {
+        .login li {
+            width: 120px;
+            border-bottom: none;
+            height: 10px;
+            line-height: 10px;
+            font-size: 1.4em;
+        }
+
+        /* Display Inline */
+        .login li {
+            display: inline-block;
+            margin-right: -4px;
+        }
+
+    }
+
+    /* Style the footer blue and make it always at the bottom. */
+    .footer {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        background-color: #2980b9;
+        text-align: center;
+        padding: 5px;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .full-height {
+        height: 100vh;
+    }
+
+    .flex-center {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .position-ref {
+        position: relative;
+    }
+
+    .top-right {
+        position: absolute;
+        right: 10px;
+        top: 18px;
+    }
+
+    .links > a {
+        color: #636b6f;
+        padding: 0 25px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .m-b-md {
+        margin-bottom: 30px;
+    }
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="fragments/header :: headerinc"></th:block>
+</head>
+<body>
+
+<div th:include="fragments/header :: header"></div>
+<div class="heading">
+    <h3 th:each="watchbrand: ${watchbrand}" th:text="${watchbrand.brandname}"></h3>
+</div>
+<div class="content">
+
+</div>
+
+
+</body>
+</html>

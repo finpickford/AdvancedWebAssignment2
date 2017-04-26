@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="fragments/header :: headerinc"></th:block>
+</head>
+<body>
+
+<div th:include="fragments/header :: header"></div>
+
+<div class="content">
+<h3>Add Brand</h3>
+    <div class="form">
+    <form action="#" th:action="@{/watchbrand/addbrand}" th:object="${watchbrand}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <p>Brand Name: </p> <input type="text" th:field="*{brandname}"/>
+
+        <button type="submit">Add Brand</button>
+    </form>
+    </div>
+</div>
+
+</body>
+</html>

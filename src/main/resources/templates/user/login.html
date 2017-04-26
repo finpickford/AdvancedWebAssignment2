@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!--</meta charset="UTF-8">-->
-    <title>User Login</title>
+    <th:block th:include="fragments/header :: headerinc"></th:block>
 </head>
 <body>
-<h3>User Login</h3>
 
+<div th:include="fragments/header :: header"></div>
+<div class="content">
+<h3>User Login</h3>
+<div class="form">
 <form action ="#" th:action="@{/user/login}" th:object="${user}" method="post">
     <p>Account Name: </p> <input type="text" th:field="*{accountname}"/>
     <p>Password: </p> <input type="password" th:field="*{password}"/>
 
-    <input type="submit" value="Login" />
+    <button type="submit">Login</button>
 </form>
 
-<div th:if="${message!=null}">
-    <p/>
-    <span th:text="${message}"/>
+    <div th:if="${message!=null}">
+        <p/>
+        <span th:text="${message}"/>
+    </div>
+</div>
+
+    <div class="form">
+        <form action ="#" th:action="@{/user/register}" th:object="${user}" method="post">
+            <button type="submit">Register</button>
+        </form>
+</div>
+
 </div>
 
 </body>
