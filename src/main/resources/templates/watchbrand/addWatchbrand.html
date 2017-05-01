@@ -6,9 +6,10 @@
 <body>
 
 <div th:include="fragments/header :: header"></div>
-
+<div class="heading">
+    <h3>Add Brand</h3>
+</div>
 <div class="content">
-<h3>Add Brand</h3>
     <div class="form">
     <form action="#" th:action="@{/watchbrand/addbrand}" th:object="${watchbrand}" method="post">
         <input type="hidden" th:field="*{id}"/>

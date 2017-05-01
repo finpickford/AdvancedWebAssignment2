@@ -10,7 +10,12 @@
     <h3 th:each="watchbrand: ${watchbrand}" th:text="${watchbrand.brandname}"></h3>
 </div>
 <div class="content">
+    <div class="form">
+        <form action ="#" th:action="@{/watchbrandmodel/addmodel/}+${watchbrand.id}" method="get">
 
+            <button type="submit">Add Brand Model</button>
+        </form>
+    </div>
 </div>
 
 
