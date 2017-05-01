@@ -36,18 +36,27 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
-    public String dashboard(Model model, HttpSession session) {
+    public String dashboard(HttpSession session) {
 
         if(session.getAttribute("login")==null)
         {
             return "redirect:/user/login";
         }
 
-        List<User> users = userService.findAll();
-
-
-        model.addAttribute( "users", users);
         return "dashboard";
+
+
+    }
+
+    @RequestMapping(value = "/location", method = RequestMethod.GET)
+    public String location(HttpSession session) {
+
+        if(session.getAttribute("login")==null)
+        {
+            return "redirect:/user/login";
+        }
+
+        return "location";
 
 
     }
