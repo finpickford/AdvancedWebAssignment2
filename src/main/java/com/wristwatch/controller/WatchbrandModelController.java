@@ -31,12 +31,12 @@ public class WatchbrandModelController {
         return "watchbrandmodel/addWatchbrandModel";
     }
 
-    @RequestMapping(value = "/addmodel/{watchbrand}", method = RequestMethod.POST)
+    @RequestMapping(value = "/addmodel", method = RequestMethod.POST)
     public String addModelView(Model model, @ModelAttribute("watchbrandmodel") WatchbrandModel watchbrandModel)
     {
         watchbrandModelService.save(watchbrandModel);
 
-        return "redirect:/";
+        return "watchbrand/index";
     }
 
 
