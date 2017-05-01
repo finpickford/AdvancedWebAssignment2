@@ -21,7 +21,6 @@ public class HomeController {
     UserService userService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-//    @ResponseBody
     public String index(Model model, HttpSession session) {
 
         if(session.getAttribute("login")==null)
@@ -35,4 +34,22 @@ public class HomeController {
         model.addAttribute( "users", users);
         return "index";
     }
+
+    @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
+    public String dashboard(Model model, HttpSession session) {
+
+        if(session.getAttribute("login")==null)
+        {
+            return "redirect:/user/login";
+        }
+
+        List<User> users = userService.findAll();
+
+
+        model.addAttribute( "users", users);
+        return "dashboard";
+
+
+    }
+
 }

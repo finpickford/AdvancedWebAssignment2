@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -22,8 +23,13 @@ public class WatchbrandController {
     WatchbrandService watchbrandService;
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
-    public String all(Model model)
+    public String all(Model model, HttpSession session)
     {
+
+        if(session.getAttribute("login")==null)
+        {
+            return "redirect:/user/login";
+        }
 
         List<Watchbrand> watchbrand = watchbrandService.findAll();
 
@@ -72,8 +78,13 @@ public class WatchbrandController {
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public String searchBrandView(Model model)
+    public String searchBrandView(Model model, HttpSession session)
     {
+        if(session.getAttribute("login")==null)
+        {
+            return "redirect:/user/login";
+        }
+
         WatchbrandSearchForm searchForm = new WatchbrandSearchForm();
         model.addAttribute("searchCriteria", searchForm);
         return "watchbrand/watchbrandSearch";
