@@ -104,4 +104,5 @@ public class WatchbrandController {
         model.addAttribute("watchbrand", watchbrand);
         return "watchbrand/viewWatchBrand";
     }
+
 }
