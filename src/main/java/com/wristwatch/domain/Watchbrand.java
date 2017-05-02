@@ -13,7 +13,6 @@ import java.util.Set;
 @Entity
 public class Watchbrand {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     @NotEmpty
@@ -29,6 +28,7 @@ public class Watchbrand {
         this.brandname = brandname;
     }
 
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
@@ -45,7 +45,7 @@ public class Watchbrand {
         this.brandname = brandname;
     }
 
-    @OneToMany(mappedBy = "Watchbrand", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "watchbrand", cascade = CascadeType.ALL)
     public Set<WatchbrandModel> getWatchbrandModels() {
         return watchbrandModels;
     }

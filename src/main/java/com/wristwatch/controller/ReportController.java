@@ -33,9 +33,8 @@ public class ReportController {
         report
                 .columns(
                         Columns.column("Customer Id", "id", DataTypes.integerType()),
-                        Columns.column("First Name", "first_name", DataTypes.stringType()),
-                        Columns.column("Last Name", "last_name", DataTypes.stringType()),
-                        Columns.column("Date", "date", DataTypes.dateType()))
+                        Columns.column("First Name", "firstname", DataTypes.stringType()),
+                        Columns.column("Last Name", "lastname", DataTypes.stringType()))
                 .title(//title of the report
                         Components.text("SimpleReportExample")
                                 .setHorizontalAlignment(HorizontalAlignment.CENTER))

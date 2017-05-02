@@ -18,7 +18,6 @@ import java.util.Set;
 @Entity
 public class WatchbrandModel {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     @NotEmpty
@@ -45,6 +44,7 @@ public class WatchbrandModel {
         this.watchbrand = watchbrand;
     }
 
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
@@ -78,7 +78,7 @@ public class WatchbrandModel {
     }
 
     @ManyToOne
-    @JoinColumn(name = "Watchbrand_id")
+    @JoinColumn(name = "watchbrand_id")
     public Watchbrand getWatchbrand() {
         return watchbrand;
     }
