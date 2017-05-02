@@ -16,7 +16,6 @@ public class WatchbrandModelService {
 
     @Autowired
     WatchbrandModelRepository watchbrandModelRepository;
-    WatchbrandRepository watchbrandRepository;
 
     public WatchbrandModel save(WatchbrandModel m) {
 

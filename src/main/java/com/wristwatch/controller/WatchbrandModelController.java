@@ -32,7 +32,7 @@ public class WatchbrandModelController {
     }
 
     @RequestMapping(value = "/addmodel", method = RequestMethod.POST)
-    public String addModelView(Model model, @ModelAttribute("watchbrandmodel") WatchbrandModel watchbrandModel)
+    public String addModel(Model model, @ModelAttribute("watchbrandmodel") WatchbrandModel watchbrandModel)
     {
         watchbrandModelService.save(watchbrandModel);
 
