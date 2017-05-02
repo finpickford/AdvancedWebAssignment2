@@ -7,26 +7,26 @@
 
 <div th:include="fragments/header :: loginheader"></div>
 <div class="content">
-<h3>User Login</h3>
-<div class="form">
-<form action ="#" th:action="@{/user/login}" th:object="${user}" method="post">
-    <p>Account Name: </p> <input type="text" th:field="*{accountname}"/>
-    <p>Password: </p> <input type="password" th:field="*{password}"/>
+    <h3>User Login</h3>
+    <div class="form">
+        <form action ="#" th:action="@{/user/login}" th:object="${user}" method="post">
+            <p>Account Name: </p> <input type="text" th:field="*{accountname}"/>
+            <p>Password: </p> <input type="password" th:field="*{password}"/>
 
-    <button type="submit">Login</button>
-</form>
+            <button type="submit">Login</button>
+        </form>
 
-    <div th:if="${message!=null}">
-        <p/>
-        <span th:text="${message}"/>
+        <div th:if="${message!=null}">
+            <p/>
+            <span th:text="${message}"/>
+        </div>
     </div>
-</div>
 
     <div class="form">
         <form action ="#" th:action="@{/user/register}" th:object="${user}" method="post">
             <button type="submit">Register</button>
         </form>
-</div>
+    </div>
 
 </div>
 

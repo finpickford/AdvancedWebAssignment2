@@ -68,10 +68,8 @@ public class WatchbrandController {
     }
 
     @RequestMapping(value = "/deletebrand/{watchbrand}", method = RequestMethod.GET)
-//    @ResponseBody
     public String deleteBrand(@PathVariable Watchbrand watchbrand)
     {
-//        String name = watchbrand.getBrandname();
         watchbrandService.delete(watchbrand);
 
         return "redirect:/watchbrand/all";

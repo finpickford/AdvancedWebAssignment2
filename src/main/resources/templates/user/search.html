@@ -8,17 +8,17 @@
 <div th:include="fragments/header :: header"></div>
 
 <div class="content">
-<h3>Searh Users</h3>
+    <h3>Searh Users</h3>
 
     <div class="form">
         <div class="search">
-<form th:action="@{/user/search}" th:object="${searchCriteria}" method="post">
-    <p>Firstname: <input type="text" th:field="*{firstname}"/></p>
-    <p>Lastname: <input type="text" th:field="*{lastname}"/></p>
+            <form th:action="@{/user/search}" th:object="${searchCriteria}" method="post">
+                <p>Firstname: <input type="text" th:field="*{firstname}"/></p>
+                <p>Lastname: <input type="text" th:field="*{lastname}"/></p>
 
-    <p/>
-    <button type="submit">Search</button>
-</form>
+                <p/>
+                <button type="submit">Search</button>
+            </form>
         </div>
     </div>
 </div>

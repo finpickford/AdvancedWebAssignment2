@@ -15,5 +15,4 @@ public class WatchbrandSearchForm {
         this.brandname = brandname;
     }
 
-
 }

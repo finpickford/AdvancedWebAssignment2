@@ -11,12 +11,12 @@
 </div>
 <div class="content">
     <div class="form">
-    <form action="#" th:action="@{/watchbrand/addbrand}" th:object="${watchbrand}" method="post">
-        <input type="hidden" th:field="*{id}"/>
-        <p>Brand Name: </p> <input type="text" th:field="*{brandname}"/>
+        <form action="#" th:action="@{/watchbrand/addbrand}" th:object="${watchbrand}" method="post">
+            <input type="hidden" th:field="*{id}"/>
+            <p>Brand Name: </p> <input type="text" th:field="*{brandname}"/>
 
-        <button type="submit">Add Brand</button>
-    </form>
+            <button type="submit">Add Brand</button>
+        </form>
     </div>
 </div>
 

@@ -14,8 +14,6 @@
         <ol>
             <li th:each="watchbrandmodel : ${watchbrandmodel}">
                 <a href="#" th:href="@{/watchbrandmodel/viewmodel/}+${watchbrandmodel.id}" th:text="${watchbrandmodel.modelname}"></a>
-                <!--<a href="#" th:href="@{/watchbrandmodel/updatemodel/}+${watchbrandmodel.id}">Update</a>-->
-                <!--<a href="#" th:href="@{/watchbrandmodel/deletemodel/}+${watchbrandmodel.id}">Delete</a>-->
             </li>
         </ol>
     </div>

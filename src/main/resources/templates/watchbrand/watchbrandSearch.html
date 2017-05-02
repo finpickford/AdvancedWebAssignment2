@@ -12,17 +12,16 @@
 <div class="content">
 
     <div class="form">
-            <form th:action="@{/watchbrand/search}" th:object="${searchCriteria}" method="post">
-                <p>Brand name: <input type="text" th:field="*{brandname}"/></p>
+        <form th:action="@{/watchbrand/search}" th:object="${searchCriteria}" method="post">
+            <p>Brand name: <input type="text" th:field="*{brandname}"/></p>
 
-                <button type="submit">Search</button>
-            </form>
+            <button type="submit">Search</button>
+        </form>
     </div>
 
     <div>
         <ol>
             <li th:each="watchbrand : ${watchbrand}">
-                <!--<span th:text="${watchbrand.brandname}">Rolex</span>-->
                 <a href="#" th:href="@{/watchbrand/viewbrand/}+${watchbrand.id}" th:text="${watchbrand.brandname}"></a>
             </li>
         </ol>

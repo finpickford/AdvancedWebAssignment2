@@ -12,15 +12,15 @@
 <div class="content">
     <div>
         <li>
-    <p th:text="${watchbrandmodel.modelno}"></p>
-        <p th:text="${watchbrandmodel.description}"></p>
+            <p th:text="${watchbrandmodel.modelno}"></p>
+            <p th:text="${watchbrandmodel.description}"></p>
             <p th:text="${watchbrandmodel.casesize}"></p>
             <p th:text="${watchbrandmodel.dialcolour}"></p>
             <p th:text="${watchbrandmodel.movement}"></p>
             <p th:text="${watchbrandmodel.price}"></p>
-    <a href="#" th:href="@{/watchbrandmodel/updatemodel/}+${watchbrandmodel.id}">Update</a>
-    <a href="#" th:href="@{/watchbrandmodel/delete/}+${watchbrandmodel.id}" onclick="return confirm('Are you sure?')">Delete</a>
-    </li>
+            <a href="#" th:href="@{/watchbrandmodel/updatemodel/}+${watchbrandmodel.id}">Update</a>
+            <a href="#" th:href="@{/watchbrandmodel/delete/}+${watchbrandmodel.id}" onclick="return confirm('Are you sure?')">Delete</a>
+        </li>
     </div>
 </div>
 

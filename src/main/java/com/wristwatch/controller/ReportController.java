@@ -166,7 +166,7 @@ public class ReportController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-         }
+        }
     }
 
     @RequestMapping(value = "/createuserreport", method = RequestMethod.GET)

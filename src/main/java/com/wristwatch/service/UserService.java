@@ -36,7 +36,6 @@ public class UserService {
     {
 
         List<User> users = userRepository.checkUserInput(user.getAccountname(), user.getPassword());
-//        List<User> users = userRepository.findByFirstnameAndPassword(user.getAccountname(), user.getPassword());
         return users !=null && users.size()>0;
     }
 

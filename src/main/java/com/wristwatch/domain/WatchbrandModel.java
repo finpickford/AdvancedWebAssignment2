@@ -48,7 +48,7 @@ public class WatchbrandModel {
     }
 
     public WatchbrandModel(String modelname){
-    this.modelname = modelname;
+        this.modelname = modelname;
     }
 
     public WatchbrandModel(String modelname, Watchbrand watchbrand){
