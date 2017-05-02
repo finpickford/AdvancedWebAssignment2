@@ -28,4 +28,20 @@
     </div>
 </div>
 
+<div th:fragment="loginheader">
+    <div class="header">
+        <div class="logo">
+            <ul>
+                <li><a th:href="@{/}">WristWatch</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a th:href="@{/user/login}">Login</a></li>
+            <li><a th:href="@{/user/register}">Register</a></li>
+        </ul>
+    </div>
+</div>
+
 </html>
