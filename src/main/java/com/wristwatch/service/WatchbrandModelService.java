@@ -18,7 +18,6 @@ public class WatchbrandModelService {
 
     public WatchbrandModel save(WatchbrandModel m) {
 
-        m.setWatchbrand(watchbrandRepository.findOne(m.getBrandID()));
         return watchbrandModelRepository.save(m); }
 
 }
