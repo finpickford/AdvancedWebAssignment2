@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="fragments/header :: headerinc"></th:block>
+</head>
+<body>
+
+<div th:include="fragments/header :: header"></div>
+<div class="heading">
+    <h3>All models</h3>
+</div>
+<div class="content">
+    <div>
+        <ol>
+            <li th:each="watchbrandmodel : ${watchbrandmodel}">
+                <a href="#" th:href="@{/watchbrandmodel/viewmodel/}+${watchbrandmodel.id}" th:text="${watchbrandmodel.modelname}"></a>
+                <!--<a href="#" th:href="@{/watchbrandmodel/updatemodel/}+${watchbrandmodel.id}">Update</a>-->
+                <!--<a href="#" th:href="@{/watchbrandmodel/deletemodel/}+${watchbrandmodel.id}">Delete</a>-->
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+</body>
+</html>

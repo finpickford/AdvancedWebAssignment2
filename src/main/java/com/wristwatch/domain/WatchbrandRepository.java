@@ -13,5 +13,7 @@ public interface WatchbrandRepository extends JpaRepository<Watchbrand, Long> {
     @Query("SELECT watchbrand from Watchbrand watchbrand WHERE watchbrand.brandname LIKE %?1%")
     List<Watchbrand> searchWatchbrand(String brandname);
 
+//    @Query("SELECT watchbrand from Watchbrand watchbrand LEFT JOIN WatchbrandModel watchbrandModel ON watchbrand.id=watchbrandModel.watchbrand_id");
+
    
 }

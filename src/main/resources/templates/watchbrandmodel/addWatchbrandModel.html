@@ -13,7 +13,7 @@
     <div class="form">
         <form action="#" th:action="@{/watchbrandmodel/addmodel}" th:object="${watchbrandmodel}" method="post">
             <input type="hidden" th:field="*{id}"/>
-            <!--<input type="hidden" th:field="*{watchbrand.id}"/>-->
+            <input type="hidden" th:field="*{watchbrand.id}"/>
             <p>Model Name: </p> <input type="text" th:field="*{modelname}"/>
             <p>Model No: </p> <input type="text" th:field="*{modelno}"/>
             <p>Description: </p> <input type="text" th:field="*{description}"/>

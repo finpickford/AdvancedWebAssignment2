@@ -10,13 +10,13 @@
     <h3 th:each="watchbrand: ${watchbrand}" th:text="${watchbrand.brandname}"></h3>
 </div>
 <div class="content">
-    <!--<div>-->
-        <!--<ol>-->
-            <!--<li th:each="watchbrand : ${watchbrand}">-->
-                <!--<a href="#" th:href="@{/watchbrand/viewbrand/}+${watchbrandmodel.id}" th:text="${watchbrandmodel.modelname}"></a>-->
-            <!--</li>-->
-        <!--</ol>-->
-    <!--</div>-->
+    <div>
+        <ol>
+            <li th:each="watchbrand : ${watchbrand}">
+                <a href="#" th:href="@{/watchbrand/viewbrand/}+${watchbrandmodel.id}" th:text="${watchbrandmodel.modelname}"></a>
+            </li>
+        </ol>
+    </div>
 
 
     <div class="form">

@@ -10,38 +10,13 @@
     <h3>Dashboard</h3>
 </div>
 <div class="content">
+    <ul>
 
+        <li><a th:href="@{/reports/createbrandreport}">Brand Report</a></li>
+        <li><a th:href="@{/reports/createmodelreport}">Model Report</a></li>
+        <li><a th:href="@{/reports/createuserreport}">User Report</a></li>
 
-         Reports.
-
-<!--<table>-->
-    <!--<tr>-->
-        <!--<th>First Name</th>-->
-        <!--<th>Last Name</th>-->
-        <!--<th>Password</th>-->
-        <!--<th>Update</th>-->
-        <!--<th>Delete</th>-->
-    <!--</tr>-->
-    <!--<tr th:each="user : ${users}">-->
-        <!--<td th:text="${user.firstname}">Fin</td>-->
-        <!--<td th:text="${user.lastname}">Pickford</td>-->
-        <!--<td th:text="${user.password}">test</td>-->
-        <!--<td><a href="#" th:href="@{/user/update/}+${user.id}">Update</a></td>-->
-        <!--<td><a href="#" th:href="@{/user/delete/}+${user.id}">Delete</a></td>-->
-    <!--</tr>-->
-<!--</table>-->
-
-
-<!--<div>-->
-<!--<ol>-->
-    <!--<li th:each="user : ${users}">-->
-        <!--<span th:text="${user.firstname}+ ' '+${user.lastname}+', '+${user.password}"></span>-->
-        <!--<a href="#" th:href="@{/user/update/}+${user.id}">Update</a>-->
-        <!--<a href="#" th:href="@{/user/delete/}+${user.id}">Delete</a>-->
-    <!--</li>-->
-<!--</ol>-->
-<!--</div>-->
+    </ul>
 </div>
-<!--<link href="../static/css/style.css" rel="stylesheet" type="text/css" />-->
 </body>
 </html>
