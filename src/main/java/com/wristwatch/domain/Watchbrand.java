@@ -11,17 +11,24 @@ import java.util.Set;
  * Created by web on 24/04/17.
  */
 @Entity
-public class Watchbrand extends AbstractPersistable<Long> {
+public class Watchbrand {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     @NotEmpty
     String brandname;
 
-    @OneToMany(targetEntity = WatchbrandModel.class, mappedBy = "watchbrand", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<WatchbrandModel> watchbrandModels;
 
+    public Watchbrand() {
+
+    }
+
+    public Watchbrand(String brandname) {
+        this.brandname = brandname;
+    }
+
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
@@ -36,6 +43,15 @@ public class Watchbrand extends AbstractPersistable<Long> {
 
     public void setBrandname(String brandname) {
         this.brandname = brandname;
+    }
+
+    @OneToMany(mappedBy = "watchbrand", cascade = CascadeType.ALL)
+    public Set<WatchbrandModel> getWatchbrandModels() {
+        return watchbrandModels;
+    }
+
+    public void setWatchbrandModels(Set<WatchbrandModel> watchbrandModels) {
+        this.watchbrandModels = watchbrandModels;
     }
 
 }

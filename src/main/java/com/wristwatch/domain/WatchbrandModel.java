@@ -9,14 +9,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
+import javax.persistence.Table;
+import java.util.Set;
 
 /**
  * Created by web on 26/04/17.
  */
 @Entity
-public class WatchbrandModel extends AbstractPersistable<Long> {
+public class WatchbrandModel {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     @NotEmpty
@@ -28,12 +29,22 @@ public class WatchbrandModel extends AbstractPersistable<Long> {
     @NotEmpty
     String description;
 
-    private transient Long watchbrandId;
-
-    @ManyToOne
-    @JoinColumn(name = "watchbrand_id")
     private Watchbrand watchbrand;
 
+    public WatchbrandModel() {
+
+    }
+
+    public WatchbrandModel(String modelname){
+    this.modelname = modelname;
+    }
+
+    public WatchbrandModel(String modelname, Watchbrand watchbrand){
+        this.modelname = modelname;
+        this.watchbrand = watchbrand;
+    }
+
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
@@ -66,19 +77,14 @@ public class WatchbrandModel extends AbstractPersistable<Long> {
         this.description = description;
     }
 
-    public Long getBrandID() {
-        return watchbrandId;
-    }
-
-    public void setBrandId(Long brandId) {
-        this.watchbrandId = watchbrandId;
-    }
-
-    public Watchbrand getWatchbrand(){
+    @ManyToOne
+    @JoinColumn(name = "watchbrand_id")
+    public Watchbrand getWatchbrand() {
         return watchbrand;
     }
 
     public void setWatchbrand(Watchbrand watchbrand) {
         this.watchbrand = watchbrand;
     }
+
 }

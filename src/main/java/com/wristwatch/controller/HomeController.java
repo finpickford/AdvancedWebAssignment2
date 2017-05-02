@@ -2,12 +2,12 @@ package com.wristwatch.controller;
 
 import com.wristwatch.domain.User;
 import com.wristwatch.service.UserService;
-import com.wristwatch.service.WatchbrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -19,9 +19,6 @@ import java.util.List;
 public class HomeController {
     @Autowired
     UserService userService;
-
-    @Autowired
-    WatchbrandService watchbrandService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model, HttpSession session) {
@@ -46,7 +43,6 @@ public class HomeController {
             return "redirect:/user/login";
         }
 
-
         return "dashboard";
 
 
@@ -60,12 +56,9 @@ public class HomeController {
             return "redirect:/user/login";
         }
 
-
         return "location";
 
 
     }
-
-
 
 }
