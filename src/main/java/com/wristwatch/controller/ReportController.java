@@ -36,7 +36,7 @@ public class ReportController {
     UserService userService;
 
     @RequestMapping(value = "/createbrandreport", method = RequestMethod.GET)
-    public void createBrandReport() {
+    public String createBrandReport() {
 
         JasperReportBuilder report = DynamicReports.report();//a new report
         report
@@ -56,6 +56,46 @@ public class ReportController {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        }
+
+        return "redirect:/reports/viewbrandreport";
+    }
+
+    @RequestMapping(value = "/viewbrandreport", method = RequestMethod.GET)
+    public void viewBrandReport(HttpServletRequest request, HttpServletResponse response) {
+
+        ServletContext context = request.getServletContext();
+
+        File report = new File("brandreport.pdf");
+        FileInputStream inputStream = null;
+        OutputStream outputStream = null;
+
+        try {
+            inputStream = new FileInputStream(report);
+
+            response.setContentType(context.getMimeType("brandreport.pdf"));
+
+            String headerKey = "Content-Disposition";
+            String headerValue = String.format("attachment; filename=\"%s", report.getName());
+            response.setHeader(headerKey, headerValue);
+
+            outputStream = response.getOutputStream();
+
+            IOUtils.copy(inputStream, outputStream);
+
+        }
+
+        catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (null != inputStream)
+                    inputStream.close();
+                if (null != inputStream)
+                    outputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -126,7 +166,7 @@ public class ReportController {
     }
 
     @RequestMapping(value = "/createuserreport", method = RequestMethod.GET)
-    public void createUserReport() {
+    public String createUserReport() {
 
         JasperReportBuilder report = DynamicReports.report();//a new report
         report
@@ -147,6 +187,46 @@ public class ReportController {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        }
+
+        return "redirect:/reports/viewuserreport";
+    }
+
+    @RequestMapping(value = "/viewuserreport", method = RequestMethod.GET)
+    public void viewUserReport(HttpServletRequest request, HttpServletResponse response) {
+
+        ServletContext context = request.getServletContext();
+
+        File report = new File("userreport.pdf");
+        FileInputStream inputStream = null;
+        OutputStream outputStream = null;
+
+        try {
+            inputStream = new FileInputStream(report);
+
+            response.setContentType(context.getMimeType("userreport.pdf"));
+
+            String headerKey = "Content-Disposition";
+            String headerValue = String.format("attachment; filename=\"%s", report.getName());
+            response.setHeader(headerKey, headerValue);
+
+            outputStream = response.getOutputStream();
+
+            IOUtils.copy(inputStream, outputStream);
+
+        }
+
+        catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (null != inputStream)
+                    inputStream.close();
+                if (null != inputStream)
+                    outputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

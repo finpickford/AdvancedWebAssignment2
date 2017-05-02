@@ -21,6 +21,8 @@ public class WatchbrandModelService {
 
         return watchbrandModelRepository.save(m); }
 
+    public void delete(WatchbrandModel watchbrandModel) { watchbrandModelRepository.delete(watchbrandModel); }
+
     public List<WatchbrandModel> findAll() { return watchbrandModelRepository.findAll(); }
 
 }

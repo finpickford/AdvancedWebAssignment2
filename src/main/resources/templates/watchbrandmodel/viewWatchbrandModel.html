@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="fragments/header :: headerinc"></th:block>
+</head>
+<body>
+
+<div th:include="fragments/header :: header"></div>
+<div class="heading">
+    <h3 th:each="watchbrandmodel: ${watchbrandmodel}" th:text="${watchbrandmodel.modelname}"></h3>
+</div>
+<div class="content">
+    <div>
+        <li>
+    <p th:text="${watchbrandmodel.modelno}"></p>
+        <p th:text="${watchbrandmodel.description}"></p>
+    <a href="#" th:href="@{/watchbrandmodel/updatemodel/}+${watchbrandmodel.id}">Update</a>
+    <a href="#" th:href="@{/watchbrandmodel/delete/}+${watchbrandmodel.id}">Delete</a>
+    </li>
+    </div>
+</div>
+
+
+</body>
+</html>

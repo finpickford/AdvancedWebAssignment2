@@ -12,8 +12,8 @@
 <div class="content">
     <div>
         <ol>
-            <li th:each="model : ${watchbrand.watchbrandModels}">
-                <a href="#" th:href="@{/watchbrand/viewbrand/}+${model.id}" th:text="${model.modelname}"></a>
+            <li th:each="watchbrandmodel : ${watchbrand.watchbrandModels}">
+                <a href="#" th:href="@{/watchbrandmodel/viewmodel/}+${watchbrandmodel.id}" th:text="${watchbrandmodel.modelname}"></a>
             </li>
         </ol>
     </div>
