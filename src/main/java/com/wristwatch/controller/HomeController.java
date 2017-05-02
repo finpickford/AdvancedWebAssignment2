@@ -15,11 +15,14 @@ import java.util.List;
 /**
  * Created by web on 18/04/17.
  */
+
+// Create a controller to deal with the home.
 @Controller
 public class HomeController {
     @Autowired
     UserService userService;
 
+    // Load the home page.
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model, HttpSession session) {
 
@@ -35,6 +38,7 @@ public class HomeController {
         return "index";
     }
 
+    // Load the dashboard.
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
     public String dashboard(HttpSession session) {
 
@@ -48,6 +52,7 @@ public class HomeController {
 
     }
 
+    // Load the location page.
     @RequestMapping(value = "/location", method = RequestMethod.GET)
     public String location(HttpSession session) {
 

@@ -5,11 +5,13 @@
 </head>
 <body>
 
+<!--Create a page to update a user details. -->
 <div th:include="fragments/header :: header"></div>
 
 <div class="content">
     <h3>User Update</h3>
 
+    <!--A form to update each aspect of the user. -->
     <div class="form">
         <form action ="#" th:action="@{/user/update}" th:object="${user}" method="post">
             <input type="hidden" th:field="*{id}"/>

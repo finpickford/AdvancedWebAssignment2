@@ -15,6 +15,8 @@ import java.util.Set;
 /**
  * Created by web on 26/04/17.
  */
+
+// Create a table to store the watch brand model details.
 @Entity
 public class WatchbrandModel {
 
@@ -121,12 +123,14 @@ public class WatchbrandModel {
         this.price = price;
     }
 
+    // Create the many to one relationship with the watch brand. Create a column for the linked brand id, and return the brand later.
     @ManyToOne
     @JoinColumn(name = "watchbrand_id")
     public Watchbrand getWatchbrand() {
         return watchbrand;
     }
 
+    // Set the watchbrand for the relationship.
     public void setWatchbrand(Watchbrand watchbrand) {
         this.watchbrand = watchbrand;
     }

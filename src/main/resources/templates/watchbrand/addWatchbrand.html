@@ -5,11 +5,14 @@
 </head>
 <body>
 
+<!--Create a page to add a brand. -->
 <div th:include="fragments/header :: header"></div>
 <div class="heading">
     <h3>Add Brand</h3>
 </div>
 <div class="content">
+
+    <!--A form to add the brand into the database. -->
     <div class="form">
         <form action="#" th:action="@{/watchbrand/addbrand}" th:object="${watchbrand}" method="post">
             <input type="hidden" th:field="*{id}"/>

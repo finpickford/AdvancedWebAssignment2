@@ -10,6 +10,8 @@ import javax.persistence.Id;
 /**
  * Created by web on 18/04/17.
  */
+
+// Create a table for the user details.
 @Entity
 public class User {
 

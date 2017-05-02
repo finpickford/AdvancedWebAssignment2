@@ -5,11 +5,14 @@
 </head>
 <body>
 
+<!--Create a page to show every watch brand model within the database. -->
 <div th:include="fragments/header :: header"></div>
 <div class="heading">
     <h3>All models</h3>
 </div>
 <div class="content">
+
+    <!--Create a div to show each brand model in a list. -->
     <div>
         <ol>
             <li th:each="watchbrandmodel : ${watchbrandmodel}">

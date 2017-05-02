@@ -5,11 +5,14 @@
 </head>
 <body>
 
+<!--Create a page to show the watchbrand model update page, for a user to update the watch brand model. -->
 <div th:include="fragments/header :: header"></div>
 <div class="heading">
     <h3 th:each="watchbrandmodel: ${watchbrandmodel}" th:text="${watchbrandmodel.modelname}"></h3>
 </div>
 <div class="content">
+
+    <!--Create a form to show the details for the user to update, post this to the controller. -->
     <div class="form">
         <form action="#" th:action="@{/watchbrandmodel/updatemodel}" th:object="${watchbrandmodel}" method="post">
             <input type="hidden" th:field="*{id}"/>
@@ -22,6 +25,7 @@
             <p>Movement: </p> <input type="text" th:field="*{movement}"/>
             <p>Price: </p> <input type="text" th:field="*{price}"/>
 
+            <!--Create a button to submit, with validation to confirm. -->
             <button type="submit" onclick="return confirm('Are you sure?')">Update Model</button>
         </form>
     </div>

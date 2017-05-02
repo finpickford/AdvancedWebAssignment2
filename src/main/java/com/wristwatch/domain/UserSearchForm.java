@@ -3,6 +3,8 @@ package com.wristwatch.domain;
 /**
  * Created by web on 19/04/17.
  */
+
+// Create a class to search for users.
 public class UserSearchForm {
 
     String firstname;

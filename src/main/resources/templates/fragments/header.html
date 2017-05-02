@@ -6,7 +6,7 @@
     <link href="../../../css/style.css" rel="stylesheet" type="text/css" />
 </div>
 
-
+<!--Header file for the css link, as well as the nav bar on every page of the website. -->
 <div th:fragment="header">
     <div class="header">
         <div class="logo">
@@ -15,6 +15,8 @@
             </ul>
         </div>
     </div>
+
+    <!--Nav bar for the site, to link to important pages. -->
     <div class="nav">
         <ul>
             <li><a th:href="@{/}">Home</a></li>
@@ -28,6 +30,7 @@
     </div>
 </div>
 
+<!--A fragment for the login header file. -->
 <div th:fragment="loginheader">
     <div class="header">
         <div class="logo">

@@ -5,6 +5,7 @@
 </head>
 <body>
 
+<!--Create a page for the user dashboard, to be able to link each report. -->
 <div th:include="fragments/header :: header"></div>
 <div class="heading">
     <h3>Dashboard</h3>
@@ -12,8 +13,11 @@
 <div class="content">
     <ul>
 
+        <!--Brand report-->
         <li><a th:href="@{/reports/createbrandreport}">Brand Report</a></li>
+        <!--Model report-->
         <li><a th:href="@{/reports/createmodelreport}">Model Report</a></li>
+        <!--User report-->
         <li><a th:href="@{/reports/createuserreport}">User Report</a></li>
 
     </ul>

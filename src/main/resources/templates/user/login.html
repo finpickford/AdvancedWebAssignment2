@@ -5,6 +5,7 @@
 </head>
 <body>
 
+<!--Create a page to to login to the site. -->
 <div th:include="fragments/header :: loginheader"></div>
 <div class="content">
     <h3>User Login</h3>
@@ -16,12 +17,14 @@
             <button type="submit">Login</button>
         </form>
 
+        <!--If there is no text in the fields, give an error. -->
         <div th:if="${message!=null}">
             <p/>
             <span th:text="${message}"/>
         </div>
     </div>
 
+    <!--Link to the register form. -->
     <div class="form">
         <form action ="#" th:action="@{/user/register}" th:object="${user}" method="post">
             <button type="submit">Register</button>

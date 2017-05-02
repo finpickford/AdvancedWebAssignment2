@@ -5,11 +5,14 @@
 </head>
 <body>
 
+<!--Create a page to view the brand details and its models. -->
 <div th:include="fragments/header :: header"></div>
 <div class="heading">
     <h3 th:each="watchbrand: ${watchbrand}" th:text="${watchbrand.brandname}"></h3>
 </div>
 <div class="content">
+
+    <!--Create a div to show the brands models. List each model and allow the user to click on each one. -->
     <div>
         <ol>
             <li th:each="watchbrandmodel : ${watchbrand.watchbrandModels}">
@@ -18,6 +21,7 @@
         </ol>
     </div>
 
+    <!--Create a form to add a model to the particular brand. -->
     <div class="form">
         <form action ="#" th:action="@{/watchbrandmodel/addmodel/}+${watchbrand.id}" method="get">
 

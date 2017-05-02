@@ -5,12 +5,14 @@
 </head>
 <body>
 
+<!--Create a page to search for a watch brand. -->
 <div th:include="fragments/header :: header"></div>
 <div class="heading">
     <h3>Searh Watchbrand</h3>
 </div>
 <div class="content">
 
+    <!--Create a form to search for a brand. -->
     <div class="form">
         <form th:action="@{/watchbrand/search}" th:object="${searchCriteria}" method="post">
             <p>Brand name: <input type="text" th:field="*{brandname}"/></p>
@@ -19,6 +21,7 @@
         </form>
     </div>
 
+    <!--Create a div list to show the brand name with a link to the brands page. -->
     <div>
         <ol>
             <li th:each="watchbrand : ${watchbrand}">

@@ -5,16 +5,20 @@
 </head>
 <body>
 
+<!--Create a page to update the brands details. -->
 <div th:include="fragments/header :: header"></div>
 <div class="heading">
     <h3 th:each="watchbrand: ${watchbrand}" th:text="${watchbrand.brandname}"></h3>
 </div>
 <div class="content">
+
+    <!--Create a form to update the details. -->
     <div class="form">
         <form action ="#" th:action="@{/watchbrand/updatebrand}" th:object="${watchbrand}" method="post">
             <input type="hidden" th:field="*{id}"/>
             <p>Brand Name: </p> <input type="text" th:field="*{brandname}"/>
 
+            <!--Make sure the user is sure of the update. -->
             <button type="submit" onclick="return confirm('Are you sure?')">Update Brand</button>
         </form>
     </div>

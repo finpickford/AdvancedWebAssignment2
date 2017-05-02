@@ -13,6 +13,7 @@
 </head>
 <body>
 
+ <!--Reference the fragment header file for the nav bar and css.-->
 <div th:include="fragments/header :: header"></div>
 <div class="heading">
     <h3>Location</h3>
@@ -46,9 +47,11 @@
 
         }
 
+        // Get user position to be able to show them on the map.
         function getUserPosition()
         {
-            function itWorks(position)
+            // Do this function if the location is working, show the user position variable.
+            function working (position)
             {
                 latitude = position.coords.latitude;
                 longitude = position.coords.longitude;
@@ -56,16 +59,17 @@
                 console.log('longitude: '+longitude);
                 userLatLng = new google.maps.LatLng({lat: latitude, lng: longitude});
                 showMap(userLatLng);
-                addMarker(userLatLng,"You");
+                addMarker(userLatLng,"You"); // Add a marker for the user.
                 latLng = new google.maps.LatLng({lat: 53.643198, lng: -1.777089});
-                addMarker(latLng,"WristWatch");
+                addMarker(latLng,"WristWatch"); // Add a marker for the shop.
             }
 
-            function itDoesntWork(error)
+            // If not working correctly, output an error to the user.
+            function notWorking(error)
             {
                 console.log('There is an error '+error);
             }
-            navigator.geolocation.getCurrentPosition(itWorks, itDoesntWork);
+            navigator.geolocation.getCurrentPosition(working, notWorking);
         }
 
         function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -76,12 +80,14 @@
             infoWindow.open(map);
         }
 
+        // Initialse the user position.
         function init(){
             getUserPosition()
         }
 
         window.addEventListener("load",init,false);
 
+        // Show the map to the user, and pass through their latitude and longtitude.
         function showMap(latLng){
             map = new google.maps.Map(document.getElementById('map'),
                 {
@@ -97,6 +103,7 @@
                 });
         }
 
+        // Add a marker for both locations.
         function addMarker(latLng, label){
             marker = new google.maps.Marker({
                 position: latLng,

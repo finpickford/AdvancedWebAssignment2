@@ -114,13 +114,12 @@ public class UserController {
     }
 
     @RequestMapping(value = "/delete/{user}", method = RequestMethod.GET)
-    @ResponseBody
     public String delete(@PathVariable User user)
     {
         String name = user.getFirstname()+ " "+user.getLastname();
 
         userService.delete(user);
 
-        return name;
+        return "redirect:/";
     }
 }

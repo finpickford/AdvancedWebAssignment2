@@ -5,14 +5,19 @@
 </head>
 <body>
 
+<!--Create a page to enable the user to add a watch brand model. -->
 <div th:include="fragments/header :: header"></div>
 <div class="heading">
     <h3 th:each="watchbrand: ${watchbrand}" th:text="${watchbrand.brandname}"></h3>
 </div>
 <div class="content">
+
+    <!--Create a form to show the details for the user to add. -->
     <div class="form">
         <form action="#" th:action="@{/watchbrandmodel/addmodel}" th:object="${watchbrandmodel}" method="post">
             <input type="hidden" th:field="*{id}"/>
+
+            <!--Pass the watchbrand id through for the one to many relationship. -->
             <input type="hidden" th:field="*{watchbrand.id}"/>
             <p>Model Name: </p> <input type="text" th:field="*{modelname}"/>
             <p>Model No: </p> <input type="text" th:field="*{modelno}"/>

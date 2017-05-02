@@ -5,11 +5,14 @@
 </head>
 <body>
 
+<!--Page to show the watch brands particular model which the user has clicked on previously. -->
 <div th:include="fragments/header :: header"></div>
 <div class="heading">
     <h3 th:each="watchbrandmodel: ${watchbrandmodel}" th:text="${watchbrandmodel.modelname}"></h3>
 </div>
 <div class="content">
+
+    <!--Create a div to show the details of each watch brand model in a list item.-->
     <div>
         <li>
             <p th:text="${watchbrandmodel.modelno}"></p>
@@ -18,6 +21,8 @@
             <p th:text="${watchbrandmodel.dialcolour}"></p>
             <p th:text="${watchbrandmodel.movement}"></p>
             <p th:text="${watchbrandmodel.price}"></p>
+
+            <!--Add two links to be able to delete and update the model. -->
             <a href="#" th:href="@{/watchbrandmodel/updatemodel/}+${watchbrandmodel.id}">Update</a>
             <a href="#" th:href="@{/watchbrandmodel/delete/}+${watchbrandmodel.id}" onclick="return confirm('Are you sure?')">Delete</a>
         </li>

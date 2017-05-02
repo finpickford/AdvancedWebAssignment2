@@ -5,6 +5,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 /**
  * Created by web on 19/04/17.
  */
+
+// Create a class for the login form.
 public class LoginForm {
     @NotEmpty
     String accountname;
