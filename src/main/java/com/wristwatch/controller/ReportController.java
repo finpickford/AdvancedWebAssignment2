@@ -107,7 +107,11 @@ public class ReportController {
                 .columns(
                         Columns.column("Model Name", "modelname", DataTypes.stringType()),
                         Columns.column("Model Number", "modelno", DataTypes.stringType()),
-                        Columns.column("Description", "description", DataTypes.stringType()))
+                        Columns.column("Description", "description", DataTypes.stringType()),
+                        Columns.column("Case Size", "casesize", DataTypes.stringType()),
+                        Columns.column("Dial Colour", "dialcolour", DataTypes.stringType()),
+                        Columns.column("Movement", "movement", DataTypes.stringType()),
+                        Columns.column("Price", "price", DataTypes.stringType()))
                 .title(//title of the report
                         Components.text("Brand Model Report")
                                 .setHorizontalAlignment(HorizontalAlignment.CENTER))

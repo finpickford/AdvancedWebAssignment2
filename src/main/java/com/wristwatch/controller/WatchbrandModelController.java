@@ -36,7 +36,7 @@ public class WatchbrandModelController {
     {
         watchbrandModelService.save(watchbrandModel);
 
-        return "watchbrand/index";
+        return "redirect:/watchbrand/all";
     }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
@@ -74,7 +74,7 @@ public class WatchbrandModelController {
     public String update(Model model, @ModelAttribute("watchbrandModel") WatchbrandModel watchbrandModel)
     {
         watchbrandModelService.save(watchbrandModel);
-        return "redirect:/";
+        return "redirect:/watchbrand/all";
     }
 
     @RequestMapping(value = "/delete/{watchbrandmodel}", method = RequestMethod.GET)

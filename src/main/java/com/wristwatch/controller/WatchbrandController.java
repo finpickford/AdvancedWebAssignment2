@@ -50,7 +50,7 @@ public class WatchbrandController {
     public String addBrand(Model model, @ModelAttribute("watchbrand") Watchbrand watchbrand)
     {
         watchbrandService.save(watchbrand);
-        return "watchbrand/index";
+        return "redirect:/watchbrand/all";
     }
 
     @RequestMapping(value = "/updatebrand/{watchbrand}", method = RequestMethod.GET)
@@ -64,17 +64,17 @@ public class WatchbrandController {
     public String update(Model model, @ModelAttribute("watchbrand") Watchbrand watchbrand)
     {
         watchbrandService.save(watchbrand);
-        return "redirect:/";
+        return "redirect:/watchbrand/all";
     }
 
     @RequestMapping(value = "/deletebrand/{watchbrand}", method = RequestMethod.GET)
-    @ResponseBody
+//    @ResponseBody
     public String deleteBrand(@PathVariable Watchbrand watchbrand)
     {
-        String name = watchbrand.getBrandname();
+//        String name = watchbrand.getBrandname();
         watchbrandService.delete(watchbrand);
 
-        return name;
+        return "redirect:/watchbrand/all";
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)

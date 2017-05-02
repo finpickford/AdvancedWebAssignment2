@@ -15,7 +15,7 @@
             <li th:each="watchbrand : ${watchbrand}">
                 <a href="#" th:href="@{/watchbrand/viewbrand/}+${watchbrand.id}" th:text="${watchbrand.brandname}"></a>
                 <a href="#" th:href="@{/watchbrand/updatebrand/}+${watchbrand.id}">Update</a>
-                <a href="#" th:href="@{/watchbrand/deletebrand/}+${watchbrand.id}">Delete</a>
+                <a href="#" th:href="@{/watchbrand/deletebrand/}+${watchbrand.id}" onclick="return confirm('Are you sure?')">Delete</a>
             </li>
         </ol>
     </div>

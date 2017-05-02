@@ -7,17 +7,17 @@
 
 <div th:include="fragments/header :: header"></div>
 <div class="heading">
-    <h3>Watch Brand Update</h3>
+    <h3 th:each="watchbrand: ${watchbrand}" th:text="${watchbrand.brandname}"></h3>
 </div>
 <div class="content">
-<div class="form">
-<form action ="#" th:action="@{/watchbrand/updatebrand}" th:object="${watchbrand}" method="post">
-    <input type="hidden" th:field="*{id}"/>
-    <p>Brand Name: </p> <input type="text" th:field="*{brandname}"/>
+    <div class="form">
+        <form action ="#" th:action="@{/watchbrand/updatebrand}" th:object="${watchbrand}" method="post">
+            <input type="hidden" th:field="*{id}"/>
+            <p>Brand Name: </p> <input type="text" th:field="*{brandname}"/>
 
-    <button type="submit">Update Brand</button>
-</form>
-</div>
+            <button type="submit" onclick="return confirm('Are you sure?')">Update Brand</button>
+        </form>
+    </div>
 </div>
 </body>
 </html>

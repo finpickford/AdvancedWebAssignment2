@@ -29,6 +29,18 @@ public class WatchbrandModel {
     @NotEmpty
     String description;
 
+    @NotEmpty
+    String casesize;
+
+    @NotEmpty
+    String dialcolour;
+
+    @NotEmpty
+    String movement;
+
+    @NotEmpty
+    String price;
+
     private Watchbrand watchbrand;
 
     public WatchbrandModel() {
@@ -75,6 +87,38 @@ public class WatchbrandModel {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCasesize() {
+        return casesize;
+    }
+
+    public void setCasesize(String casesize) {
+        this.casesize = casesize;
+    }
+
+    public String getDialcolour() {
+        return dialcolour;
+    }
+
+    public void setDialcolour(String dialcolour) {
+        this.dialcolour = dialcolour;
+    }
+
+    public String getMovement() {
+        return movement;
+    }
+
+    public void setMovement(String movement) {
+        this.movement = movement;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     @ManyToOne
